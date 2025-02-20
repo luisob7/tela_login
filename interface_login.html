@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Tela de Login</title>
+</head>
+
+<style>
+    body {
+        background-color: rgb(116, 206, 236);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <br><br><br><br><br><br><br><br><br><br>
+    <div style="text-align: center; padding: 20px; border: 2px solid rgb(6, 65, 65); border-radius: 2px; background-color: rgb(177, 214, 248); width: 660px; margin-left: auto; margin-right: auto;">
+        <form>
+            <label style="color: rgb(6, 65, 65);">Usuário</label>
+            <br>
+            <input type="text" id="usuario" style="text-align: center; width: 300px; font-family: Arial; font-size: 20px;"/>
+            <br><br>
+            <label style="color: rgb(6, 65, 65);">Senha</label>
+            <br>
+            <input type="password" id="senha" style="text-align: center; width: 300px; font-family: Arial; font-size: 20px;"/>
+            <br><br>
+            <button type="button" style="background-color: rgb(6, 65, 65); color: white; width: 150px; font-family: Arial; font-size: 20px;" onclick="login()">Realizar<br>o Login</button>
+        </form> 
+    </div>
+
+    <script>
+        function login() {
+            var usuario = document.getElementById('usuario').value.trim();
+            var senha = document.getElementById('senha').value.trim();
+            if(usuario && senha) {
+                alert('Você foi logado com sucesso.');
+                document.getElementById('usuario').value = ""
+                document.getElementById('senha').value = ""
+            } else if(usuario) {
+                alert('Informe sua senha.')
+            } else if(senha) {
+                alert('Informe seu usuário.')
+            } else {
+                alert('Informe seu usuário e senha.')
+            }
+        }
+    </script>
+</body>
+</html>
