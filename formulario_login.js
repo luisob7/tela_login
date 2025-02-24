@@ -15,8 +15,6 @@ function login(){
         limparCampos();
         mostrarAlerta("Login realizado com sucesso!");
     } else {
-        console.log(userValido);
-        console.log(passwordValida);
         reconhecerErro(userValido, passwordValida);
     }
 }
@@ -32,6 +30,7 @@ function validarLogin(){
 }
 
 function validarUsuario (login) {
+    console.log(login)
     if (login != undefined && login.trim() !== ''){
         return true;
     } else {
@@ -40,6 +39,7 @@ function validarUsuario (login) {
 }
 
 function validarSenha (password) {
+    console.log(password)
     if (password != undefined && password.trim() !== '' && !password.includes(' ')){
         return true;
     } else {
@@ -57,11 +57,13 @@ function reconhecerErro(user, password) {
     } else if (password === true) {
         mostrarAlerta("Por favor, informe seu usuário.");
     } else {
-        mostrarAlerta("Por favor, informe seu usuário e sua senha.")
+        mostrarAlerta("Por favor, informe seu usuário e sua senha.");
     }
 }
 
 function limparCampos() {
     document.getElementById('usuario').value = '';
     document.getElementById('senha').value = '';
+    campoLogin = '';
+    campoPassword = '';
 }
