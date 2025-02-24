@@ -30,7 +30,6 @@ function validarLogin(){
 }
 
 function validarUsuario (login) {
-    console.log(login)
     if (login != undefined && login.trim() !== ''){
         return true;
     } else {
@@ -39,7 +38,6 @@ function validarUsuario (login) {
 }
 
 function validarSenha (password) {
-    console.log(password)
     if (password != undefined && password.trim() !== '' && !password.includes(' ')){
         return true;
     } else {
